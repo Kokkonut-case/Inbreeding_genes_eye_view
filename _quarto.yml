@@ -6,10 +6,8 @@ website:
   title: "The evolutionary conflicts of inbreeding"
   navbar:
     left:
-      - href: notes.qmd
-        text: Project notes
       - href: index.qmd
-        text: Modelling progress
+        text: Code companion
 
     tools:
       - icon: github
