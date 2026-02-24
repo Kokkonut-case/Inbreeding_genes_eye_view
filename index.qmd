@@ -217,7 +217,7 @@ Fig_1ab <-
   coord_fixed() +
   facet_wrap(~Sex) +
   labs(y = ~delta~'(inbreeding depression)', 
-       x = '_r_ (Genealogical relatedness)') +
+       x = '_r_ (genealogical relatedness)') +
   scale_x_continuous(expand = c(0, 0), 
                      breaks = c(0, 0.25, 0.5, 0.75, 1)) + 
   scale_y_continuous(expand = c(0, 0)) + 
@@ -1501,7 +1501,7 @@ a_pop <-
   scale_colour_gradientn(colours = temp) +
   labs(x = "Time",
        y = "Population size",
-       colour = "Male refractory period\n (prob. outbred life has ended)") +
+       colour = "Male refractory period\n(prob. outbred life has ended)") +
   facet_wrap(sex_expressed~v_cat, nrow = 2,
              labeller = 
                label_glue('Sex with power: {`sex_expressed`}\nMale search efficiency: {`v_cat`}')) +
@@ -1538,7 +1538,7 @@ X_pop <-
   scale_colour_gradientn(colours = temp) +
   labs(x = "Time",
        y = "Population size",
-       colour = "Male refractory period\n (prob. outbred life has ended)") +
+       colour = "Male refractory period\n(prob. outbred life has ended)") +
   facet_wrap(sex_expressed~v_cat, nrow = 2,
              labeller = 
                label_glue('Sex with power: {`sex_expressed`}\nMale search efficiency: {`v_cat`}')) +
@@ -1574,7 +1574,7 @@ Z_pop <-
   scale_colour_gradientn(colours = temp) +
   labs(x = "Time",
        y = "Population size",
-       colour = "Male refractory period\n (prob. outbred life has ended)") +
+       colour = "Male refractory period\n(prob. outbred life has ended)") +
   facet_wrap(sex_expressed~v_cat, nrow = 2,
              labeller = 
                label_glue('Sex with power: {`sex_expressed`}\nMale search efficiency: {`v_cat`}')) +
@@ -1611,7 +1611,7 @@ W_pop <-
   scale_colour_gradientn(colours = temp) +
   labs(x = "Time",
        y = "Population size",
-       colour = "Male refractory period\n (prob. outbred life has ended)") +
+       colour = "Male refractory period\n(prob. outbred life has ended)") +
   facet_wrap(sex_expressed~v_cat, nrow = 2,
              labeller = 
                label_glue('Sex with power: {`sex_expressed`}\nMale search efficiency: {`v_cat`}')) +
@@ -1648,7 +1648,7 @@ Y_pop <-
   scale_colour_gradientn(colours = temp) +
   labs(x = "Time",
        y = "Population size",
-       colour = "Male refractory period\n (prob. outbred life has ended)") +
+       colour = "Male refractory period\n(prob. outbred life has ended)") +
   facet_wrap(sex_expressed~v_cat, nrow = 2,
              labeller = 
                label_glue('Sex with power: {`sex_expressed`}\nMale search efficiency: {`v_cat`}')) +
@@ -1685,7 +1685,7 @@ C_m_pop <-
   scale_colour_gradientn(colours = temp) +
   labs(x = "Time",
        y = "Population size",
-       colour = "Male refractory period\n (prob. outbred life has ended)") +
+       colour = "Male refractory period\n(prob. outbred life has ended)") +
   facet_wrap(sex_expressed~v_cat, nrow = 2,
              labeller = 
                label_glue('Sex with power: {`sex_expressed`}\nMale search efficiency: {`v_cat`}')) +
@@ -1721,7 +1721,7 @@ C_P_pop <-
   scale_colour_gradientn(colours = temp) +
   labs(x = "Time",
        y = "Population size",
-       colour = "Male refractory period\n (prob. outbred life has ended)") +
+       colour = "Male refractory period\n(prob. outbred life has ended)") +
   facet_wrap(sex_expressed~v_cat, nrow = 2,
              labeller = 
                label_glue('Sex with power: {`sex_expressed`}\nMale search efficiency: {`v_cat`}')) +
@@ -1818,32 +1818,32 @@ Prop_mated_series <-
 Plot
 
 ```{r}
-#| fig-width: 12
-#| fig-height: 15
+#| fig-width: 5.5
+#| fig-height: 10
 
 Prop_mated_series %>% 
   ggplot(aes(x = time, y = prop_mated, colour = v_cat)) + 
   geom_line(aes(group = parameter_space_ID), alpha = 0.6) +
   geom_vline(xintercept = 5, linetype = 2) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 50)) + 
-  #scale_y_continuous(expand = c(0, 0), limits = c(0, 0.5)) +
+  scale_y_continuous(expand = c(0, 0), breaks = c(0, 0.5,1)) +
   scale_colour_manual(values = c(pnw_palette("Shuksan2")[2],
                                  pnw_palette("Shuksan2")[4])) +
   labs(x = "Time",
        y = "Prop. females that mate before death",
-       colour = "Mate searching efficiency") +
+       colour = "Mate searching\nefficiency") +
   facet_grid(factor(chromosome, levels = c("W", "Cyto. (m)", "X", "Autosome",
                                            "Z", "Cyto. (p)", "Y"))~sex_expressed) +
   theme_bw() +
   theme(panel.border = element_rect(fill = NA, colour = "black", size = .8),
         strip.background = element_rect(colour = "black", fill = "Aliceblue", linewidth = .8),
-        strip.text = element_text(size = 14),
+        strip.text = element_text(size = 10),
         axis.title.x = element_text(size = 18),
         axis.title.y = element_text(size = 18),
         axis.text = element_text(size =12),
-        legend.title = element_markdown(size = 18),
-        legend.text = element_text(size = 18),
-        legend.position = "bottom",
+        legend.title = element_text(size = 14),
+        legend.text = element_text(size = 14),
+        #legend.position = "bottom",
         panel.spacing = unit(1, "lines"))
   
   
