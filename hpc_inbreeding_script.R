@@ -131,14 +131,6 @@ make_mating_table <- function(gene_location){
   return(books)  
 }
 
-offspring_genotypes_autosome <- make_mating_table("A")
-offspring_genotypes_X <- make_mating_table("X")
-offspring_genotypes_Y <- make_mating_table("Y")
-offspring_genotypes_Z <- make_mating_table("Z")
-offspring_genotypes_W <- make_mating_table("W")
-offspring_genotypes_C <- make_mating_table("C")
-offspring_genotypes_P <- make_mating_table("P")
-
 sample_mating_table <- function(inheritance_scheme, 
                                 f,
                                 mother){
@@ -158,6 +150,13 @@ sample_mating_table <- function(inheritance_scheme,
                        replace = TRUE), ]
 }
 
+#offspring_genotypes_autosome <- make_mating_table("A")
+#offspring_genotypes_X <- make_mating_table("X")
+#offspring_genotypes_Y <- make_mating_table("Y")
+offspring_genotypes_Z <- make_mating_table("Z")
+#offspring_genotypes_W <- make_mating_table("W")
+#offspring_genotypes_C <- make_mating_table("C")
+#offspring_genotypes_P <- make_mating_table("P")
 
 continuous_time_simulation <- function(row,
                                        parameters,
@@ -298,9 +297,9 @@ continuous_time_simulation <- function(row,
   
   while(t <= time_end & keep_going){
     
-    print(paste0("Population size = ", pop_size, 
-                 ", breeders = ", sum(pop_matrix[,10], na.rm = T), 
-                 ", time = ", round(t, 3), ", Prop I =", Prop_I, ", mutation events =", mutant_introduced))
+    #print(paste0("Population size = ", pop_size, 
+     #            ", breeders = ", sum(pop_matrix[,10], na.rm = T), 
+      #           ", time = ", round(t, 3), ", Prop I =", Prop_I, ", mutation events =", mutant_introduced))
     
     # find next event 
     
@@ -702,4 +701,4 @@ continuous_time_simulation <- function(row,
 
 continuous_time_simulation(row = row_number, 
                            parameters = params, 
-                           inheritance_scheme = offspring_genotypes_autosome)
+                           inheritance_scheme = offspring_genotypes_Z)
