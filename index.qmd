@@ -25,20 +25,11 @@ format:
 library(tidyverse) 
 library(vroom) # to read lots of csv files at once
 
-# more table options
-
-library(pander) # for tables
-library(kableExtra) # for scrolling tables
-library(data.table) # for efficient handling of large dataframes
-
 # making ggplot more powerful
 
 library(MetBrewer) # for colour palettes based upon artwork housed at the MET
 library(MoMAColors) # for colour palettes based upon artwork housed at MoMA
-library(wesanderson) # for colour palettes based on wes anderson movies
-library(rcartocolor) # for nice sequential colour schemes
 library(PNWColors) # for colour palettes 
-library(tidybayes) # for plotting distributions
 library(stickylabeller) # labelling facets with strings in ggplot
 library(geomtextpath) # for curved plot annotations
 library(ggtext) # for markdown syntax in plot labels
@@ -47,7 +38,7 @@ library(ggnewscale) # to reset scales in plots, allowing multiple fill arguments
 
 # for computation speed checks
 
-library(profvis) # breakdown of complex functions
+#library(profvis) # breakdown of complex functions
 library(bench) # individual functions
 
 # for a neat report of the system environment
