@@ -49,6 +49,9 @@ library(ggnewscale) # to reset scales in plots, allowing multiple fill arguments
 
 library(profvis) # breakdown of complex functions
 library(bench) # individual functions
+
+# for a neat report of the system environment
+library(report)
 ```
 
 # Plotting results from the inclusive fitness model
@@ -2524,4 +2527,6 @@ AZ_heatmap_fine
 
 # System environment
 
+```{r}
 sessionInfo() %>% report::report()
+```
